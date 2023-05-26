@@ -25,6 +25,7 @@
 
 		<!-- Customized Bootstrap Stylesheet -->
 		<link href="css/style.css" rel="stylesheet" />
+		<link href="css/theme.css" rel="stylesheet" />
 	</head>
 
 	<body>
@@ -111,7 +112,37 @@
 						</div>
 						<a href="contact.html" class="nav-item nav-link">Contact</a>
 					</div>
-					<a href="" class="btn btn-lg btn-primary px-3 d-none d-lg-block">Get Quote</a>
+
+					<!-- !Account Section -->
+					<img src="img/user.png" alt="logo" class="user-pic" onclick="toggleMenu()" />
+
+					<div class="sub-menu-wrap" id="subMenu">
+						<div class="sub-menu">
+							<div class="user-info">
+								<img src="img/user.png" alt="" />
+								<h2>Test User</h2>
+							</div>
+							<hr />
+							<a href="#" class="sub-menu-link dropdown-item">
+								<img src="img/profile.png" alt="" />
+								<p class="m-0">Edit Profile</p>
+							</a>
+							<a href="#" class="sub-menu-link dropdown-item">
+								<img src="img/setting.png" alt="" />
+								<p class="m-0">Settings & Privacy</p>
+							</a>
+							<a href="#" class="sub-menu-link dropdown-item">
+								<img src="img/help.png" alt="" />
+								<p class="m-0">Help & Support</p>
+							</a>
+							<a href="#" class="sub-menu-link dropdown-item">
+								<img src="img/logout.png" alt="" />
+								<p class="m-0">Logout</p>
+							</a>
+						</div>
+					</div>
+					<!-- !Account Section End -->
+					<!-- <a href="" class="btn btn-lg btn-primary px-3 d-none d-lg-block">Get Quote</a> -->
 				</div>
 			</nav>
 		</div>
@@ -830,6 +861,20 @@
 		<a href="#" class="btn btn-lg btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
 
 		<!-- JavaScript Libraries -->
+		<script>
+			let subMenu = document.getElementById('subMenu');
+
+			function toggleMenu() {
+				subMenu.classList.toggle('open-menu');
+				if (subMenu.classList.contains('open-menu')) {
+					// Move the element to the top layer
+					subMenu.style.zIndex = '9999';
+				} else {
+					// Reset the z-index value
+					subMenu.style.zIndex = '';
+				}
+			}
+		</script>
 		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
 		<script src="lib/easing/easing.min.js"></script>
@@ -843,6 +888,7 @@
 		<script src="mail/contact.js"></script>
 
 		<!-- Template Javascript -->
+
 		<script src="js/main.js"></script>
 	</body>
 </html>
