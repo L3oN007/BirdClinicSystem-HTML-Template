@@ -7,8 +7,8 @@
 }
 body,
 html {
-	/* height: 100%;
-	margin: 0; */
+	height: 100%;
+	margin: 0;
 }
 
 .container {
@@ -170,48 +170,69 @@ html {
 }
 
 input[type='text'],
-input[type='number'] {
+input[type='number'],
+.input-div input,
+select,
+text {
+	width: 100%;
+	height: 40px;
+	border: none;
+	outline: 0;
+	border-radius: 5px;
+	border: 1px solid #aaa;
+	gap: 20px;
+	box-sizing: border-box;
+	padding: 0px 10px;
+}
+
+input[type='text'],
+input[type='number'],
+.input-div input,
+select,
+.input-div select,
+.input-div input[type='date'],
+.input-div textarea {
 	width: 100%;
 	height: 40px;
 	border: none;
 	outline: 0;
 	border-radius: 5px;
 	border: 1px solid #cbced4;
-	gap: 20px;
 	box-sizing: border-box;
 	padding: 0px 10px;
-}
-select {
-	width: 100%;
-	height: 40px;
-	border: none;
-	outline: 0;
-	border-radius: 5px;
-	border: 1px solid #cbced4;
-	gap: 20px;
-	box-sizing: border-box;
-	padding: 0px 10px;
-}
-.input-text .input-div span {
-	position: absolute;
-	top: 10px;
-	left: 10px;
 	font-size: 14px;
-	transition: all 0.5s;
+	font-weight: 400;
+	color: #333;
+	appearance: textfield;
+	/* box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); */
 }
-.input-div input:focus ~ span,
-.input-div input:valid ~ span {
-	top: -15px;
-	left: 6px;
-	font-size: 10px;
-	font-weight: 600;
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+	appearance: none; /* Added appearance property */
+	margin: 0; /* Added margin property */
+}
+
+/* select:focus,
+.input-div input:focus,
+.input-div select:focus,
+.input-div input[type='date']:focus {
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+} */
+
+.input-div input[type='date']:valid {
+	color: #333;
 }
 
 .input-div span {
 	top: -15px;
 	left: 6px;
-	font-size: 10px;
+	font-size: 15px;
 }
+
+/* !Hereeeee */
+
+/* !END */
+
 .buttons button {
 	height: 40px;
 	width: 100px;
@@ -404,9 +425,19 @@ select {
 }
 
 /* ! Radio */
+
+.input-div span,
+.radio-group span {
+	top: 0px;
+	left: 6px;
+	font-size: 15px;
+	display: inline-block;
+	width: 100%;
+}
+
 .radio-group {
 	display: flex;
-	margin-bottom: 20px;
+	align-items: center;
 }
 
 .radio-group label {
